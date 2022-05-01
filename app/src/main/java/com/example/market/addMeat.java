@@ -1,6 +1,7 @@
 package com.example.market;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
     EditText editTextSort;
     EditText editTextWeight;
     EditText editTextPrice;
-
+    Button buttonBackToMenu_meat;
     Button buttonAdd;
 
     DBHelper dbHelper;
@@ -35,6 +36,8 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
         editTextSort = findViewById(R.id.editTextSort);
         editTextWeight = findViewById(R.id.editTextWeight);
         editTextPrice = findViewById(R.id.editTextPrice);
+        buttonBackToMenu_meat = findViewById(R.id.buttonBackToMenu_meat);
+        buttonBackToMenu_meat.setOnClickListener(this);
 
         buttonAdd = findViewById(R.id.buttonAddMeat_a);
         buttonAdd.setOnClickListener(this);
@@ -113,6 +116,11 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
 
         switch (view.getId()) {
+
+            case R.id.buttonBackToMenu_meat:
+                startActivity(new Intent(this, MainActivity2.class));
+                break;
+
             case R.id.buttonAddMeat_a:
                 String sort = editTextSort.getText().toString();
                 String weight = editTextWeight.getText().toString();
@@ -168,6 +176,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
                     UpdateTable();
                 }
                 break;
+
 
         }
     }

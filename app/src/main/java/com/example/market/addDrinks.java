@@ -1,6 +1,7 @@
 package com.example.market;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,7 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
     EditText editTextDrinkName;
     EditText editTextVol;
     EditText editTextDrinkPrice;
-
+    Button buttonBackToMenu_drinks;
     Button buttonAddDrink;
 
     DBHelper dbHelper;
@@ -30,7 +31,8 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_drinks);
-
+        buttonBackToMenu_drinks = findViewById(R.id.buttonBackToMenu_drinks);
+        buttonBackToMenu_drinks.setOnClickListener(this);
         editTextDrinkName = findViewById(R.id.editTextDrinkName);
         editTextVol = findViewById(R.id.editTextVol);
         editTextDrinkPrice = findViewById(R.id.editTextDrinkPrice);
@@ -105,6 +107,12 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
 
         switch (view.getId()) {
+
+            case R.id.buttonBackToMenu_drinks:
+                startActivity(new Intent(this, MainActivity2.class));
+                break;
+
+
             case R.id.buttonAddDrinks_a:
                 String drinkName = editTextDrinkName.getText().toString();
                 String vol = editTextVol.getText().toString();

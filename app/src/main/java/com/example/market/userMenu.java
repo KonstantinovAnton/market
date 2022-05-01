@@ -49,6 +49,11 @@ public class userMenu extends AppCompatActivity implements View.OnClickListener 
             case R.id.buttonRedUser:
                 startActivity(new Intent(this, redUser.class));
                 break;
+
+            case R.id.buttonBackToAuto_u:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
+
         }
     }
 }
