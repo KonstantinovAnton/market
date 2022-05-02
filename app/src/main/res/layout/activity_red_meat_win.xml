@@ -4,56 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".redMeatWin">
 
     <EditText
         android:id="@+id/editTextSort_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
+        android:hint="Сорт"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Сорт"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/editTextWeight_red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextWeight_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
+        android:hint="Вес"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Вес"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPrice_red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSort_red" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextPrice_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
+        android:hint="Цена"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Цена"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextWeight_red" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonSaveRedMeat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/buttons"
         android:text="Сохранить"
+        android:textColor="@drawable/font_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPrice_red" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </android.support.constraint.ConstraintLayout>

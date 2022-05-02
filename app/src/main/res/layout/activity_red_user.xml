@@ -4,52 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".redUser">
 
     <EditText
         android:id="@+id/editTextLoginRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:backgroundTint="@color/black"
+
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:backgroundTintMode="src_in"
         android:ems="10"
         android:hint="Логин"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPasswordRed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextPasswordRed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
-        android:hint="Пароль"
-
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLoginRed"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonSaveUser"
-        android:layout_width="190dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/buttons"
         android:text="Сохранить"
+        android:textColor="@drawable/font_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordRed"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
         tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 
 </android.support.constraint.ConstraintLayout>

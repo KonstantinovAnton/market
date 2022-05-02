@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
                 TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
 
                 TextView outputID = new TextView(this);
+                outputID.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 1.0f;
                 outputID.setLayoutParams(params);
                 outputID.setText(cursor.getString(idIndex));
@@ -74,6 +76,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
                 dbOutputRow.addView(outputID);
 
                 TextView outputStart = new TextView(this);
+                outputStart.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 3.0f;
                 outputStart.setLayoutParams(params);
                 outputStart.setText(cursor.getString(startRouteIndex));
@@ -81,6 +84,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
                 dbOutputRow.addView(outputStart);
 
                 TextView outputEnd = new TextView(this);
+                outputEnd.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 3.0f;
                 outputEnd.setLayoutParams(params);
                 outputEnd.setText(cursor.getString(endRouteIndex) + " кг");
@@ -88,6 +92,7 @@ public class addMeat extends AppCompatActivity implements View.OnClickListener {
                 dbOutputRow.addView(outputEnd);
 
                 TextView outputPrice = new TextView(this);
+                outputPrice.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 3.0f;
                 outputPrice.setLayoutParams(params);
                 outputPrice.setText(cursor.getString(priceIndex) + " руб");

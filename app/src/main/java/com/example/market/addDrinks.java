@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +29,8 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
     SQLiteDatabase database;
     ContentValues contentValues;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,8 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
         dbHelper = new DBHelper(this);
         database = dbHelper.getWritableDatabase();
 
+
+
         UpdateTable();
     }
     public void UpdateTable() {
@@ -57,10 +63,12 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
             dbOutput.removeAllViews();
             do {
                 TableRow dbOutputRow = new TableRow(this);
+
                 dbOutputRow.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
 
                 TextView outputIDD = new TextView(this);
+                outputIDD.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 1.0f;
                 outputIDD.setLayoutParams(params);
                 outputIDD.setText(cursor.getString(idIndex));
@@ -68,6 +76,7 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
                 dbOutputRow.addView(outputIDD);
 
                 TextView outputStartD = new TextView(this);
+                outputStartD.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 3.0f;
                 outputStartD.setLayoutParams(params);
                 outputStartD.setText(cursor.getString(startRouteIndex));
@@ -76,12 +85,16 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
 
                 TextView outputEndD = new TextView(this);
                 params.weight = 3.0f;
+                outputEndD.setTextColor(Color.parseColor("#E0E0E0"));
                 outputEndD.setLayoutParams(params);
                 outputEndD.setText(cursor.getString(endRouteIndex) + " л");
                 outputEndD.setTextSize(12);
                 dbOutputRow.addView(outputEndD);
 
+
+
                 TextView outputPriceD = new TextView(this);
+                outputPriceD.setTextColor(Color.parseColor("#E0E0E0"));
                 params.weight = 3.0f;
                 outputPriceD.setLayoutParams(params);
                 outputPriceD.setText(cursor.getString(priceIndex) + " руб");
@@ -90,6 +103,7 @@ public class addDrinks extends AppCompatActivity implements View.OnClickListener
 
                 Button deleteBtnD = new Button(this);
                 deleteBtnD.setOnClickListener(this);
+
                 params.weight = 1.0f;
                 deleteBtnD.setLayoutParams(params);
                 deleteBtnD.setText("Убрать\nнапиток");

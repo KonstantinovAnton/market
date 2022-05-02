@@ -4,87 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".addDrinks">
 
     <EditText
         android:id="@+id/editTextDrinkName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
         android:hint="Название"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextVol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:hint="Литраж"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDrinkName" />
 
     <EditText
         android:id="@+id/editTextDrinkPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@drawable/font_edittext_press"
         android:ems="10"
+        android:hint="Цена"
+
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:hint="Цена"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextVol" />
 
-    <Button
-        android:id="@+id/buttonAddDrinks_a"
+    <EditText
+        android:id="@+id/editTextVol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Добавить"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@drawable/font_edittext_press"
+        android:ems="10"
+        android:hint="Литраж"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@drawable/font_edittext_press"
+        android:textColorHint="@drawable/font_edittext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDrinkPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDrinkName" />
 
     <Button
         android:id="@+id/buttonBackToMenu_drinks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/buttons"
         android:text="Назад"
+        android:textColor="@drawable/font_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
         android:id="@+id/dbOutput"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
         app:layout_constraintBottom_toTopOf="@+id/buttonBackToMenu_drinks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAddDrinks_a">
 
 
-    <TableRow
+        <TableRow
             android:id="@+id/button_table"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_width="318dp"
+            android:layout_height="361dp"
+            android:layout_weight="1"
+
+            >
+
 
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonAddDrinks_a"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/buttons"
+        android:text="Добавить"
+        android:textColor="@drawable/font_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDrinkPrice" />
 
 </android.support.constraint.ConstraintLayout>

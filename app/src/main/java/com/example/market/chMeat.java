@@ -4,6 +4,7 @@ import static java.lang.String.valueOf;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,6 +45,9 @@ public class chMeat extends AppCompatActivity implements View.OnClickListener {
 
         totalPrice = findViewById(R.id.textBill);
         totalPrice.setText(valueOf(totalAmount));
+
+        totalWeight.setTextColor(Color.parseColor("#E0E0E0"));
+        totalPrice.setTextColor(Color.parseColor("#E0E0E0"));
 
         dbHelper = new DBHelper(this);
         database = dbHelper.getWritableDatabase();
@@ -86,6 +90,10 @@ public class chMeat extends AppCompatActivity implements View.OnClickListener {
                 outputPrice.setText(cursor.getString(priceIndex) + " руб");
                 outputPrice.setTextSize(12);
                 dbOutputRow.addView(outputPrice);
+
+                outputEnd.setTextColor(Color.parseColor("#E0E0E0"));
+                outputStart.setTextColor(Color.parseColor("#E0E0E0"));
+                outputPrice.setTextColor(Color.parseColor("#E0E0E0"));
 
                 Button deleteBtn = new Button(this);
                 deleteBtn.setOnClickListener(this);
